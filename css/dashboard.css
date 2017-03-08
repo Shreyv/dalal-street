@@ -93,58 +93,60 @@ table.dashboard_table tr:last-child td:last-child {
     border-radius: 0px 0px 10px 0px;
 }
 
-.nav_selected {
+.nav_selected{
     background: #29353d;
 }
 
-.buy_sell_button {
+.buy_sell_button{
 
-    border: none;
+    border:none;
     background: none;
     color: #546E7A;
 }
 
-.buy_sell_button:hover {
+.buy_sell_button:hover{
     color: #263238;
     background: #B0BEC5;
     border-radius: 5px;
 }
 
-.company_graph {
+.company_graph{
 
     margin-top: 20px;
     height: 390px;
     background: #F5F5F5;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);
 }
 
-td#table_td {
+
+
+#myTable td{
     font-size: 14px;
     height: 20px;
     padding: 0px;
     background: #f5f9fb;
 }
 
-td#table_td_red {
+td#table_td_red{
 
     font-size: 14px;
     height: 20px;
     padding: 0px;
-    color: #F44336;
+    color:#F44336;
     background: #FFEBEE;
 }
 
-td#table_td_green {
+td#table_td_green{
 
     font-size: 14px;
     height: 20px;
     padding: 0px;
-    color: #4CAF50;
-    background: #E8F5E9;
+    color:#4CAF50;
+    background:#E8F5E9;
 }
 
-.news_title {
+.news_title{
     text-align: center;
     font-size: 15px;
     font-weight: bold;

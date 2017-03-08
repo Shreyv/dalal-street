@@ -8,90 +8,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-        /* Add a gray background color and some padding to the footer */
-        footer {
-            background-color: #f2f2f2;
-            padding: 25px;
-        }
-
-        .carousel-inner img {
-            width: 100%; /* Set width to 100% */
-            min-height: 200px;
-        }
-
-        /* Hide the carousel text when the screen is less than 600 pixels wide */
-        @media (max-width: 600px) {
-            .carousel-caption {
-                display: none;
-            }
-        }
-
-        .nav_selected {
-            background: #29353d;
-        }
-
-        .buy_sell_button {
-
-            border: none;
-            background: none;
-            color: #546E7A;
-        }
-
-        .buy_sell_button:hover {
-            color: #263238;
-            background: #B0BEC5;
-            border-radius: 5px;
-        }
-
-        td#table_td {
-            height: 20px;
-            padding: 0px;
-            background: #f5f9fb;
-        }
-
-        .table_background_layout {
-            background: #F5F5F5;
-            border-radius: 10px;
-            box-shadow: 0px 8px 16px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        p.table_title {
-            text-align: center;
-            padding: 0px;
-            margin: 0px;
-            font-size: 30px;
-            color: #29353d;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body style="background: #ECEFF1;">
 
 <nav class="navbar navbar-inverse" style="background: #3e515b; border:none;margin-bottom: 5px;">
     <div class="container-fluid">
-        <div class="navbar-header">
+        <div class="navbar-header" >
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <img src="images/logo.png" style="width:45px;height:45px;margin-right: 5px;margin-top: 2px;">
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="dashbord.html">Dashboard</a></li>
+                <li ><a href="dashbord.html">Dashboard</a></li>
                 <li class="nav_selected"><a href="#" style="color: #fff;">Portfolio & Transactions</a></li>
                 <li><a href="#">Broker</a></li>
                 <li><a href="#">How to Play</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li style="font-size:20px;color: #FFF;margin-top: 10px;margin-left: 20px;"><i class="fa fa-inr"
-                                                                                              style="font-size: 16px;margin-right: 3px;"></i>10
-                    Cr
-                </li>
-                <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-left: 2px;"></span>Visahl Chaniyara</a>
-                </li>
+                <li style="font-size:20px;color: #FFF;margin-top: 10px;margin-left: 20px;"><i class="fa fa-inr" style="font-size: 16px;margin-right: 3px;"></i>10 Cr</li>
+                <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-left: 2px;"></span>Visahl Chaniyara</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
             </ul>
         </div>
@@ -99,15 +39,15 @@
 </nav>
 
 
+
+
 <div class="container">
     <div class="row">
         <div class="col-sm-4" style="padding: 10px;">
             <div class="table_background_layout">
                 <p class="table_title">Portfolio</p>
-                <div class="table-responsive"
-                     style="box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);border-radius: 0px 0px 10px 10px;">
-                    <table id="table_portfolio" class=" col-sm-8 table text-center"
-                           style="padding: 0px;background: #FFF;margin: 0px;" data-min="5" data-max="50">
+                <div class="table-responsive" style="box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);border-radius: 0px 0px 5px 5px;">
+                    <table id="table_portfolio" class=" col-sm-8 table text-center" style="padding: 0px;background: #FFF;margin: 0px;" data-min="5" data-max="50">
                         <thead class="text-center">
                         <tr style="background: #546E7A;color: #FFF;">
                             <th style="text-align: center;">Company</th>
@@ -124,10 +64,8 @@
         <div class="col-sm-8" style="padding: 10px;">
             <div class="table_background_layout">
                 <p class="table_title">Transections</p>
-                <div class="table-responsive"
-                     style="box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);border-radius: 0px 0px 10px 10px;">
-                    <table id="table_transection" class=" col-sm-8 table text-center"
-                           style="padding: 0px;background: #FFF;margin: 0px;" data-min="5" data-max="50">
+                <div class="table-responsive" style="box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);border-radius: 0px 0px 5px 5px;">
+                    <table id="table_transection" class=" col-sm-8 table text-center" style="padding: 0px;background: #FFF;margin: 0px;" data-min="5" data-max="50">
                         <thead class="text-center">
                         <tr style="background: #546E7A;color: #FFF;">
                             <th style="text-align: center;">Company</th>
@@ -149,18 +87,16 @@
 </div>
 
 
+
 <script>
 
 
-    function portfolio(index) {
+    function portfolio(index){
         var table = document.getElementById("table_portfolio");
         var row = table.insertRow(1);
 
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-
-        cell1.id = "table_td"
-        cell2.id = "table_td"
 
         cell1.innerHTML = "Zeus Learning";
         cell2.innerHTML = index;
@@ -176,25 +112,19 @@
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4);
 
-        cell1.id = "table_td"
-        cell2.id = "table_td"
-
-        cell3.id = "table_td";
-        cell4.id = "table_td";
-        cell5.id = "table_td";
 
         cell1.innerHTML = "Zeus Learning";
         cell2.innerHTML = 'Buy';
         cell3.innerHTML = index;
         cell4.innerHTML = "10:30";
-        cell5.innerHTML = "07 Mar 2017";
+        cell5.innerHTML = "07 March";
     }
 
     for (i = 1; i < 15; i++) {
         transection(i);
     }
 
-    for (var i = 1; i < 10; i++) {
+    for (var i = 1; i <10; i++) {
         portfolio(i);
     }
 

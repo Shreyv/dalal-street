@@ -1,0 +1,62 @@
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    min-height: 200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+.nav_selected{
+    background: #29353d;
+}
+
+.buy_sell_button{
+
+    border:none;
+    background: none;
+    color: #546E7A;
+}
+
+.buy_sell_button:hover{
+    color: #263238;
+    background: #B0BEC5;
+    border-radius: 5px;
+}
+
+
+#table_transection td{
+    height: 20px;
+    padding: 0px;
+    background: #f5f9fb;
+}
+
+#table_portfolio td{
+    height: 20px;
+    padding: 0px;
+    background: #f5f9fb;
+}
+
+.table_background_layout{
+    background: #F5F5F5;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);
+}
+
+p.table_title{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-size: 30px;
+    color: #29353d;
+}
