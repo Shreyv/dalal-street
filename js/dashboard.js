@@ -1,31 +1,74 @@
 //todo: error code
 $(document).ready(function () {
-    $.getJSON("http://192.168.0.105:8000/dashboard?user_id=9586229921", function (data) {
-        //if(data["status"]=="error-code"){
-        //    //error stuff
-        //}
-        var username = data["message"]["investor"]["name"];
-        var amount = data["message"]["investor"]["amount"];
-        $("#name").text(username);
-        var company_list = data["message"]["companies"];
-        var table = document.getElementById("myTable");
-        for (var i = 0; i < company_list.length; i++) {
-            var row = table.insertRow(1);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
-            var cell6 = row.insertCell(5);
-            var cell7 = row.insertCell(6);
-            cell1.innerText = company_list[i]["_id"];
-            cell2.innerText = company_list[i]["current_price"];
-            cell3.innerText = company_list[i]["current_volume"];
-            cell4.innerText = company_list[i]["high"];
-            cell5.innerText = company_list[i]["low"];
-            cell6.innerHTML = '<button type="button" class="buy_sell_button" style="margin: 0px;">Buy</button>';
-            cell7.innerHTML = '<button type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
-        }
+    var flag = true;
+    getdashboard(flag);
+    flag = false;
+    window.setInterval(function () {
+        getdashboard(flag);
+    }, 5000);
+    function getdashboard(flag) {
+        $.getJSON("http://192.168.43.98:8000/dashboard?user_id=9586229921", function (data) {
+            //if(data["status"]=="error-code"){
+            //    //error stuff
+            //}
+            var username = data["message"]["investor"]["name"];
+            var amount = data["message"]["investor"]["amount"];
+            $("#name").text(username);
+            var row, cell1, cell2, cell3, cell4, cell5, cell6, cell7;
+            var company_list = data["message"]["companies"];
+            var table = document.getElementById("myTable");
+            for (var i = 0; i < company_list.length; i++) {
+                var x1 = "id1" + String(i);
+                var x2 = "id2" + String(i);
+                var x3 = "id3" + String(i);
+                var x4 = "id4" + String(i);
+                var x5 = "id5" + String(i);
+                var x6 = "id6" + String(i);
+                var x7 = "id7" + String(i);
+                if (flag == true) {
+                    row = table.insertRow(1);
+                    cell1 = row.insertCell(0);
+                    cell2 = row.insertCell(1);
+                    cell3 = row.insertCell(2);
+                    cell4 = row.insertCell(3);
+                    cell5 = row.insertCell(4);
+                    cell6 = row.insertCell(5);
+                    cell7 = row.insertCell(6);
+                    cell1.setAttribute("id", x1);
+                    cell2.setAttribute("id", x2);
+                    cell3.setAttribute("id", x3);
+                    cell4.setAttribute("id", x4);
+                    cell5.setAttribute("id", x5);
+                    cell6.setAttribute("id", x6);
+                    cell7.setAttribute("id", x7);
+                    cell2.setAttribute("class", "table_second");
+                    cell1.innerHTML = company_list[i]["_id"];
+                    cell2.innerHTML = "";
+                    cell3.innerHTML = company_list[i]["current_price"];
+                    cell4.innerHTML = company_list[i]["current_volume"];
+                    cell5.innerHTML = company_list[i]["high"];
+                    cell6.innerHTML = company_list[i]["low"];
+                    cell7.innerHTML = '<button type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
 
-    })
+                }
+                else {
+                    var y1 = document.getElementById(x1);
+                    var y2 = document.getElementById(x2);
+                    var y3 = document.getElementById(x3);
+                    var y4 = document.getElementById(x4);
+                    var y5 = document.getElementById(x5);
+                    var y6 = document.getElementById(x6);
+                    var y7 = document.getElementById(x7);
+                    y1.innerHTML = company_list[i]["_id"];
+                    y2.innerHTML = "";
+                    y3.innerHTML = company_list[i]["current_price"];
+                    y4.innerHTML = company_list[i]["current_volume"];
+                    y5.innerHTML = company_list[i]["high"];
+                    y6.innerHTML = company_list[i]["low"];
+                    y7.innerHTML = '<button type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
+                }
+            }
+
+        })
+    }
 })

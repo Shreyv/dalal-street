@@ -153,3 +153,7 @@ td#table_td_green{
     margin: 0px 0px 5px 0px;
     color: #29353d;
 }
+
+.table_second {
+    width: 10px;
+}

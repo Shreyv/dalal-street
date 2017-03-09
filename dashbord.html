@@ -10,10 +10,8 @@
     <script src="js/dashboard.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
-
 </head>
 <body style="background: #ECEFF1;">
-
 <nav class="navbar navbar-inverse" style="background: #3e515b; border:none;margin-bottom: 5px;">
     <div class="container-fluid">
         <div class="navbar-header" >
@@ -50,7 +48,7 @@
                     <tr style="background: #546E7A;color: #FFF;">
                         <th style="text-align: center;">Company</th>
                         <th style="text-align: center;"></th>
-                        <th style="text-align: center;">CMP</th>
+                        <th style="text-align: center;">Market Price</th>
                         <th style="text-align: center;">Volume</th>
                         <th style="text-align: center;">High</th>
                         <th style="text-align: center;">Low</th>
@@ -95,9 +93,8 @@
         var cell7 = row.insertCell(6);
 
 
-
-        cell1.innerHTML = "Zeus Learning";
-        cell2.style='width:10px;'
+//        cell1.innerHTML = "Zeus Learning";
+//        cell2.style=''
         if (index%3==0) {
 
 
@@ -108,14 +105,14 @@
         }else if(index%4==0){
 
 
-            cell3.id="table_td_green"
+            cell3.id = "table_td_green";
             cell3.innerHTML = '2000';
             cell2.innerHTML ='<img src="images/caret-arrow-up.svg" style="width:10px;height:10px;">'
 
 
         }else{
 
-            cell3.id="table_td"
+            cell3.id = "table_td";
             cell3.innerHTML = '2000';
 
         }
@@ -132,7 +129,7 @@
     }
 
     for (i = 1; i < 24; i++) {
-        myFunction(i);
+        //  myFunction(i);
     }
 
 
