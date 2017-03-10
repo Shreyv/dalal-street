@@ -1,0 +1,55 @@
+#broker_table td{
+    background: #f5f9fb;
+}
+
+td#table_td_red{
+
+    font-size: 14px;
+    height: 20px;
+    padding: 0px;
+    color:#F44336;
+    background: #FFEBEE;
+}
+
+td#table_td_green{
+
+    font-size: 14px;
+    height: 20px;
+    padding: 0px;
+    color:#4CAF50;
+    background:#E8F5E9;
+}
+
+.broker_table_background{
+    margin-top: 20px;
+    background: #F5F5F5;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);
+}
+
+span.broker_note_title{
+    color: #29353d;
+    font-size: 15px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+button.remove{
+    padding: 5px;
+    color: #fff;
+    background: #546E7A;
+    border:none;
+    border-radius: 5px;
+}
+
+button.remove:hover{
+    background: #3e515b;
+}
+
+button.remove_disabled{
+    background: #c3cfd5;
+    padding: 5px;
+    color: #fff;
+    border:none;
+    border-radius: 5px;
+}
