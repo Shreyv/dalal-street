@@ -5,9 +5,26 @@ $(document).ready(function () {
     flag = false;
     window.setInterval(function () {
         getdashboard(flag);
-    }, 5000);
+    }, 1000);
     function getdashboard(flag) {
-        $.getJSON("http://192.168.43.98:8000/dashboard?user_id=9586229921", function (data) {
+        var olddata = [];
+        var c, p;
+        var t = document.getElementById('myTable');
+        if (flag != true) {
+            for (var i = 1; i < 24; i++) {
+                c = $(t.rows[i].cells[0]).text();
+                p = $(t.rows[i].cells[2]).text();
+                olddata.push(p);
+            }
+            //for(var i=0;i<23;i++){
+            //    var temp1=olddata[i];
+            //    c = $(t.rows[i+1].cells[0]).text();
+            //    p=temp1['c'];
+            //    alert(c+" "+p);
+            //}
+        }
+
+        $.getJSON("http://192.168.0.107:8000/dashboard?user_id=9586229921", function (data) {
             //if(data["status"]=="error-code"){
             //    //error stuff
             //}
@@ -41,14 +58,15 @@ $(document).ready(function () {
                     cell5.setAttribute("id", x5);
                     cell6.setAttribute("id", x6);
                     cell7.setAttribute("id", x7);
-                    cell2.setAttribute("class", "table_second");
+                    cell2.innerHTML = '<img src="../images/caret-arrow-up.svg" style="width:10px;height:10px;">';
                     cell1.innerHTML = company_list[i]["_id"];
-                    cell2.innerHTML = "";
+                    //cell2.innerHTML = "";
+                    cell3.setAttribute("class", "table_td_green");
                     cell3.innerHTML = company_list[i]["current_price"];
                     cell4.innerHTML = company_list[i]["current_volume"];
                     cell5.innerHTML = company_list[i]["high"];
                     cell6.innerHTML = company_list[i]["low"];
-                    cell7.innerHTML = '<button type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
+                    cell7.innerHTML = '<button name="buy" type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button name="sell" type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
 
                 }
                 else {
@@ -59,16 +77,32 @@ $(document).ready(function () {
                     var y5 = document.getElementById(x5);
                     var y6 = document.getElementById(x6);
                     var y7 = document.getElementById(x7);
-                    y1.innerHTML = company_list[i]["_id"];
-                    y2.innerHTML = "";
-                    y3.innerHTML = company_list[i]["current_price"];
+                    var comp = company_list[i]["_id"];
+                    y1.innerHTML = comp;
+                    var op = olddata[22 - i];
+                    var np = company_list[i]["current_price"];
+                    if (np > op) {
+                        y2.innerHTML = '<img src="images/caret-arrow-up.svg" style="width:10px;height:10px;">';
+                        y3.removeAttribute("class");
+                        y3.setAttribute("class", "table_td_green");
+                    }
+                    else if (np < op) {
+                        //var x =np-op;
+                        //alert(String(x));
+                        y2.innerHTML = '<img src="images/sort-down.svg" style="width:10px;height:10px;">';
+                        y3.removeAttribute("class");
+                        y3.setAttribute("class", "table_td_red");
+                    }
+
+                    y3.innerHTML = np;
                     y4.innerHTML = company_list[i]["current_volume"];
                     y5.innerHTML = company_list[i]["high"];
                     y6.innerHTML = company_list[i]["low"];
-                    y7.innerHTML = '<button type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
+                    y7.innerHTML = '<button name="buy" type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button name="sell" type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
                 }
             }
 
         })
     }
+
 })

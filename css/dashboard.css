@@ -64,7 +64,6 @@ footer {
     background-color: #f2f2f2;
     padding: 25px;
 }
-
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     min-height: 200px;
@@ -128,7 +127,7 @@ table.dashboard_table tr:last-child td:last-child {
     background: #f5f9fb;
 }
 
-td#table_td_red{
+td.table_td_red {
 
     font-size: 14px;
     height: 20px;
@@ -137,7 +136,7 @@ td#table_td_red{
     background: #FFEBEE;
 }
 
-td#table_td_green{
+td.table_td_green {
 
     font-size: 14px;
     height: 20px;
@@ -152,8 +151,4 @@ td#table_td_green{
     font-weight: bold;
     margin: 0px 0px 5px 0px;
     color: #29353d;
-}
-
-.table_second {
-    width: 10px;
 }
