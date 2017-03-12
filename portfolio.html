@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/portfolio.css">
+    <script src="js/portfolio.js"></script>
 </head>
 <body style="background: #ECEFF1;">
 
@@ -63,16 +64,17 @@
         </div>
         <div class="col-sm-8" style="padding: 10px;">
             <div class="table_background_layout">
-                <p class="table_title">Transections</p>
+                <p class="table_title">Transactions</p>
                 <div class="table-responsive" style="box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);border-radius: 0px 0px 5px 5px;">
-                    <table id="table_transection" class=" col-sm-8 table text-center" style="padding: 0px;background: #FFF;margin: 0px;" data-min="5" data-max="50">
+                    <table id="table_transaction" class=" col-sm-8 table text-center"
+                           style="padding: 0px;background: #FFF;margin: 0px;" data-min="5" data-max="50">
                         <thead class="text-center">
                         <tr style="background: #546E7A;color: #FFF;">
                             <th style="text-align: center;">Company</th>
-                            <th style="text-align: center;">Trade</th>
+                            <th style="text-align: center;">Type</th>
                             <th style="text-align: center;">Quantity</th>
+                            <th style="text-align: center;">Price</th>
                             <th style="text-align: center;">Time</th>
-                            <th style="text-align: center;">Date</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -91,17 +93,17 @@
 <script>
 
 
-    function portfolio(index){
-        var table = document.getElementById("table_portfolio");
-        var row = table.insertRow(1);
-
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-
-        cell1.innerHTML = "Zeus Learning";
-        cell2.innerHTML = index;
-
-    }
+    //    function portfolio(index){
+    //        var table = document.getElementById("table_portfolio");
+    //        var row = table.insertRow(1);
+    //
+    //        var cell1 = row.insertCell(0);
+    //        var cell2 = row.insertCell(1);
+    //
+    //        cell1.innerHTML = "Zeus Learning";
+    //        cell2.innerHTML = index;
+    //
+    //    }
 
     function transection(index) {
         var table = document.getElementById("table_transection");

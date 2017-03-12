@@ -137,7 +137,7 @@
                     });
                     $("#popup_cancel").click(function () {
                         $.alerts._hide();
-                        if (callback) callback(null);
+                        // if (callback) callback(null);
                     });
                     $("#popup_prompt, #popup_ok, #popup_cancel").keypress(function (e) {
                         if (e.keyCode == 13) $("#popup_ok").trigger('click');

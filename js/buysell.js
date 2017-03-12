@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    localStorage.setItem("mobile", "9586229921");
     jQuery.browser = {};
     (function () {
         jQuery.browser.msie = false;
@@ -10,9 +11,9 @@ $(document).ready(function () {
     })();
     $("#myTable").on('click', '.buy_sell_button', function () {
         var currentRow = $(this).closest("tr");
-        var col1 = currentRow.find("td:eq(0)").text();
+        var company = currentRow.find("td:eq(0)").text();
         var type = $(this).attr("name");
-        var st = "Enter " + type + " quantity for " + col1;
+        var st = "Enter " + type + " quantity for " + company;
         // '<span style="font-size: 15px">'+st+'</span>'
         // jPrompt('<span style="font-size: 15px">'+st+'</span>', 'Prompt Dialog', function(r) {
         //     resp=parseInt(r);
@@ -22,17 +23,36 @@ $(document).ready(function () {
             var tr = parseInt(r);
             var patt = new RegExp("[^0-9]");
             var x = patt.test(r);
-            if (x == true) {
-                alert("Invalid entry...Must be a number");
+            if (r == null) {
+                //alert("Invalid entry...Must be a number");
+                jAlert('Invalid entry...Must be a number greater than 0', 'Error');
+                return;
+            }
+            else if (x == true) {
+                jAlert('Invalid entry...Must be a number greater than 0', 'Error');
                 return;
             }
             else if (index = r.indexOf('.') > -1) {
-                alert("Invalid entry...Must be a number");
+                jAlert('Invalid entry...Must be a number greater than 0', 'Error');
                 return;
             }
 
             else if (tr <= 0 || isNaN(tr) == true) {
-                alert("Invalid entry...Must be a number");
+                jAlert('Invalid entry...Must be a number greater than 0', 'Error');
+            }
+            else {
+                var mob = localStorage.getItem("mobile");
+                var d1 = {"user_id": mob, "company": company, "type": type.toLowerCase(), "quantity": tr}
+                $.ajax({
+                    url: 'http://192.168.0.107:8000/trade',
+                    type: 'post',
+                    data: JSON.stringify(d1),
+                    dataType: 'json',
+                    success: function (d2) {
+                        var x = d2["message"];
+                        alert(x);
+                    }
+                });
             }
         });
     })

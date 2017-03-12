@@ -29,8 +29,9 @@ $(document).ready(function () {
             //    //error stuff
             //}
             var username = data["message"]["investor"]["name"];
-            var amount = data["message"]["investor"]["amount"];
+            var amount = data["message"]["investor"]["balance"];
             $("#name").text(username);
+            $("#amount").text(amount);
             var row, cell1, cell2, cell3, cell4, cell5, cell6, cell7;
             var company_list = data["message"]["companies"];
             var table = document.getElementById("myTable");
@@ -58,10 +59,11 @@ $(document).ready(function () {
                     cell5.setAttribute("id", x5);
                     cell6.setAttribute("id", x6);
                     cell7.setAttribute("id", x7);
-                    cell2.innerHTML = '<img src="../images/caret-arrow-up.svg" style="width:10px;height:10px;">';
+                    cell2.innerHTML = '<img src="images/caret-arrow-up.svg" style="height:10px;">';
                     cell1.innerHTML = company_list[i]["_id"];
                     //cell2.innerHTML = "";
                     cell3.setAttribute("class", "table_td_green");
+                    //cell3.setAttribute("style","background:#");
                     cell3.innerHTML = company_list[i]["current_price"];
                     cell4.innerHTML = company_list[i]["current_volume"];
                     cell5.innerHTML = company_list[i]["high"];
