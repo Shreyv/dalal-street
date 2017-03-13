@@ -10,67 +10,6 @@
 
 }
 
-/*body*/
-/*{*/
-/*position: fixed;*/
-/*overflow-y: scroll;*/
-/*width: 100%;*/
-/*}*/
-
-.scroll-left p:hover {
-    -moz-animation-play-state: paused;
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused;
-}
-.scroll-left p {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    line-height: 30px;
-    text-align: left;
-    /* Starting position */
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    /* Apply animation to this element */
-    -moz-animation: scroll-left 20s linear infinite;
-    -webkit-animation: scroll-left 20s linear infinite;
-    animation: scroll-left 20s linear infinite;
-}
-
-/* Move it (define the animation) */
-@-moz-keyframes scroll-left {
-    0% {
-        -moz-transform: translateX(100%);
-    }
-    100% {
-        -moz-transform: translateX(-100%);
-    }
-}
-
-@-webkit-keyframes scroll-left {
-    0% {
-        -webkit-transform: translateX(100%);
-    }
-    100% {
-        -webkit-transform: translateX(-100%);
-    }
-}
-
-@keyframes scroll-left {
-    0% {
-        -moz-transform: translateX(100%); /* Browser bug fix */
-        -webkit-transform: translateX(100%); /* Browser bug fix */
-        transform: translateX(100%);
-    }
-    100% {
-        -moz-transform: translateX(-100%); /* Browser bug fix */
-        -webkit-transform: translateX(-100%); /* Browser bug fix */
-        transform: translateX(-100%);
-    }
-}
-
 /* Add a gray background color and some padding to the footer */
 
 .carousel-inner img {

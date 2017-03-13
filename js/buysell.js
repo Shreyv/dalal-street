@@ -1,3 +1,4 @@
+//todo remove setitem mobile & add notify.js
 $(document).ready(function () {
     localStorage.setItem("mobile", "9586229921");
     jQuery.browser = {};
@@ -19,7 +20,7 @@ $(document).ready(function () {
         //     resp=parseInt(r);
         // });
         // alert(resp);
-        jPrompt('<span style="font-size: 15px">' + st + '</span>', '', '', function (r) {
+        jPrompt('<span style="font-size: 20px">' + st + '</span>', '', '', function (r) {
             var tr = parseInt(r);
             var patt = new RegExp("[^0-9]");
             var x = patt.test(r);

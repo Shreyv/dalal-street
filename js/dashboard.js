@@ -1,4 +1,4 @@
-//todo: error code & first time login
+//todo: error code & first time login set in local storage user_id
 $(document).ready(function () {
     var flag = true;
     getdashboard(flag);
@@ -115,10 +115,10 @@ $(document).ready(function () {
             var market = data["message"]["news"];
             var broker = data["message"]["broker_news"];
             var mst = "", bst = "", t, m;
-            var sp = "....";
+            var sp = "...";
             for (var x = 0; x < market.length; x++) {
                 t = market[x]["timestamp"];
-                t = t.slice(14, 19);
+                t = t.slice(11, 16);
                 m = market[x]["message"];
                 mst += t + "-" + m + sp;
             }

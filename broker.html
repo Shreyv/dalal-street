@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>broker</title>
+    <title>Broker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/broker.css">
+    <script src="js/broker.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
 </head>
 
 <body style="background: #ECEFF1;">
@@ -49,18 +51,19 @@
 
 <div class="container" style="padding-bottom: 0px;margin-bottom: 0px;">
     <div class="container broker_table_background">
-        <p style="margin-top: 10px;"><span class="broker_note_title">Broker Status:-</span><span id="broker_assign_not_assign">Not Assigned</span></p>
-        <button type="button" disabled class="remove_disabled" style="margin: 0px;">Remove Assigned Broker</button>
+        <p style="margin-top: 10px;"><span class="broker_note_title">Your Broker:-</span><span
+                id="broker_assign_not_assign"></span></p>
+        <button id="removeb" type="button" class="remove_disabled" style="margin: 0px;">Remove Assigned Broker</button>
 
-        <h2 style="color: #29353d;text-align: center;">Broker</h2>
+        <h2 style="color: #29353d;text-align: center;">Broker Details</h2>
         <div class="table-responsive" style="box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);border-radius: 5px;">
             <table id="broker_table" class=" col-sm-8 table text-center " style="padding: 0px;background: #FFF;margin: 0px;" data-min="5" data-max="50">
                 <thead class="text-center">
                 <tr style="background: #546E7A;color: #FFF;">
                     <th style="text-align: center;">Company</th>
                     <th style="text-align: center;">Accuracy</th>
-                    <th style="text-align: center;">Rate/Transection</th>
-                    <th style="text-align: center;">Initial Amount</th>
+                    <th style="text-align: center;">Brokerage/Transaction</th>
+                    <th style="text-align: center;">Assigning Charge</th>
                     <th style="text-align: center;"></th>
                 </tr>
                 </thead>
@@ -97,7 +100,7 @@
     }
 
     for (i = 1; i < 4; i++) {
-        myFunction(i);
+        // myFunction(i);
     }
 
 

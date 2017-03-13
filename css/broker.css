@@ -2,23 +2,23 @@
     background: #f5f9fb;
 }
 
-td#table_td_red{
+/*td#table_td_red{*/
 
-    font-size: 14px;
-    height: 20px;
-    padding: 0px;
-    color:#F44336;
-    background: #FFEBEE;
-}
+/*font-size: 14px;*/
+/*height: 20px;*/
+/*padding: 0px;*/
+/*color:#F44336;*/
+/*background: #FFEBEE;*/
+/*}*/
 
-td#table_td_green{
+/*td#table_td_green{*/
 
-    font-size: 14px;
-    height: 20px;
-    padding: 0px;
-    color:#4CAF50;
-    background:#E8F5E9;
-}
+/*font-size: 14px;*/
+/*height: 20px;*/
+/*padding: 0px;*/
+/*color:#4CAF50;*/
+/*background:#E8F5E9;*/
+/*}*/
 
 .broker_table_background{
     margin-top: 20px;
@@ -47,7 +47,7 @@ button.remove:hover{
 }
 
 button.remove_disabled{
-    background: #c3cfd5;
+    background: #546E7A;
     padding: 5px;
     color: #fff;
     border:none;
