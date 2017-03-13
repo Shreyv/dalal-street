@@ -10,6 +10,18 @@
 
 }
 
+/*body*/
+/*{*/
+/*position: fixed;*/
+/*overflow-y: scroll;*/
+/*width: 100%;*/
+/*}*/
+
+.scroll-left p:hover {
+    -moz-animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
 .scroll-left p {
     position: absolute;
     width: 100%;
@@ -60,10 +72,7 @@
 }
 
 /* Add a gray background color and some padding to the footer */
-footer {
-    background-color: #f2f2f2;
-    padding: 25px;
-}
+
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     min-height: 200px;

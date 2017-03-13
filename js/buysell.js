@@ -50,7 +50,7 @@ $(document).ready(function () {
                     dataType: 'json',
                     success: function (d2) {
                         var x = d2["message"];
-                        alert(x);
+                        //alert(x);
                     }
                 });
             }

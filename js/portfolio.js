@@ -1,5 +1,9 @@
 $(document).ready(function () {
     var mob = localStorage.getItem("mobile");
+    var name = localStorage.getItem("name");
+    var amt = localStorage.getItem("amount");
+    $("#name").text(name);
+    $("#amount").text(amt);
     //var req={"user_id":mob};
     $.getJSON("http://192.168.0.107:8000/portfolio?user_id=9586229921", function (data) {
         var portfolio = data["message"]["portfolio"];

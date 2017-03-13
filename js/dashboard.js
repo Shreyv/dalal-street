@@ -1,7 +1,8 @@
-//todo: error code
+//todo: error code & first time login
 $(document).ready(function () {
     var flag = true;
     getdashboard(flag);
+    getnews();
     flag = false;
     window.setInterval(function () {
         getdashboard(flag);
@@ -32,6 +33,8 @@ $(document).ready(function () {
             var amount = data["message"]["investor"]["balance"];
             $("#name").text(username);
             $("#amount").text(amount);
+            localStorage.setItem("name", username);
+            localStorage.setItem("amount", amount);
             var row, cell1, cell2, cell3, cell4, cell5, cell6, cell7;
             var company_list = data["message"]["companies"];
             var table = document.getElementById("myTable");
@@ -104,6 +107,29 @@ $(document).ready(function () {
                 }
             }
 
+        })
+    }
+
+    function getnews() {
+        $.getJSON("http://192.168.0.107:8000/news?user_id=9586229921", function (data) {
+            var market = data["message"]["news"];
+            var broker = data["message"]["broker_news"];
+            var mst = "", bst = "", t, m;
+            var sp = "....";
+            for (var x = 0; x < market.length; x++) {
+                t = market[x]["timestamp"];
+                t = t.slice(14, 19);
+                m = market[x]["message"];
+                mst += t + "-" + m + sp;
+            }
+            for (var x = 0; x < broker.length; x++) {
+                t = broker[x]["timestamp"];
+                t = t.slice(14, 19);
+                m = broker[x]["message"];
+                bst += t + "-" + m + sp;
+            }
+            $("#mn").text(mst);
+            $("#bn").text(bst);
         })
     }
 
