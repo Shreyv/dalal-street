@@ -10,20 +10,6 @@
 
 }
 
-/* Add a gray background color and some padding to the footer */
-
-.carousel-inner img {
-    width: 100%; /* Set width to 100% */
-    min-height: 200px;
-}
-
-/* Hide the carousel text when the screen is less than 600 pixels wide */
-@media (max-width: 600px) {
-    .carousel-caption {
-        display: none;
-    }
-}
-
 table.dashboard_table th:first-child {
     border-radius: 10px 0px 0px 0px;
 }

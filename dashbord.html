@@ -16,6 +16,9 @@
     <script src="js/buysell.js"></script>
     <script src="js/information.js"></script>
     <script src="js/Chart.js"></script>
+    <script src="js/jquery.marquee.min.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/notify.min.js"></script>
 </head>
 <body style="background: #ECEFF1;">
 <nav class="navbar navbar-inverse" style="background: #3e515b; border:none;margin-bottom: 5px;">
@@ -34,7 +37,6 @@
                 <li><a href="portfolio.html" style="font-size: 18px;color: #fff">Portfolio & Transactions</a></li>
                 <li><a href="broker.html" style="font-size: 18px;color: #fff">Broker</a></li>
                 <li><a href="#" style="font-size: 18px;color: #fff">How to Play</a></li>
-
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li style="font-size:20px;color: #FFF;margin-top: 13px;margin-left: 20px;"><i class="fa fa-inr"
@@ -75,77 +77,18 @@
         </div>
         <div class="col-sm-4" style="padding: 10px;">
             <p class="news_title">Market News</p>
-            <div class="scroll-left">
-                <MARQUEE id="mn" style="margin-top: 4px;" WIDTH=500 HEIGHT=50 onmouseover="this.stop();"
-                         onmouseout="this.start();"></MARQUEE>
-            </div>
+            <pre style="font-size: 15px" class="scroll-left" id="mn">
+            </pre>
             <p class="news_title" style="margin-top: 10px;">Broker's Tip</p>
-            <div class="scroll-left">
-                <MARQUEE id="bn" style="margin-top: 4px;" WIDTH=500 HEIGHT=50 onmouseover="this.stop();"
-                         onmouseout="this.start();"></MARQUEE>
-            </div>
+            <pre style="font-size: 15px" class="scroll-left" id="bn">
+            </pre>
             <p class="news_title" style="margin-top: 15px;font-size: 20px;">More Details</p>
             <div id="graph-container" class="company_graph text-center" style="margin: 0px;">
-                <canvas id="display-graph" height="450" style=" width: 100%;padding: 1px;">
+                <canvas id="display-graph" height="4" style=" width: 100%;padding: 1px;">
                 </canvas>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-
-
-
-    function myFunction(index) {
-        var table = document.getElementById("myTable");
-        var row = table.insertRow(1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
-        var cell7 = row.insertCell(6);
-
-
-//       cell2.style=''
-        if (index%3==0) {
-
-            cell1.innerHTML = "TCS";
-            cell2.innerHTML ='<img src="images/sort-down.svg" style="width:10px;height:10px;">'
-            cell3.id="table_td_red"
-            cell3.innerHTML = '2000';
-
-        }else if(index%4==0){
-
-            cell1.innerHTML = "HDFC";
-            cell3.id = "table_td_green";
-            cell3.innerHTML = '2000';
-            cell2.innerHTML ='<img src="images/caret-arrow-up.svg" style="width:10px;height:10px;">'
-
-
-        }else{
-            cell1.innerHTML = "Reliance";
-            cell3.id = "table_td";
-            cell3.innerHTML = '2000';
-
-        }
-
-
-
-
-
-        cell4.innerHTML = index;
-        cell5.innerHTML = "3000";
-        cell6.innerHTML = "1300";
-        cell7.style="width:100px;"
-        cell7.innerHTML = '<button type="button" class="buy_sell_button" name="Buy" style="margin: 0px;">Buy</button><button type="button" class="buy_sell_button" name="Sell" style="margin-left: 5px;">Sell</button>';
-    }
-
-    for (i = 1; i < 24; i++) {
-        // myFunction(i);
-    }
-</script>
 </body>
 </html>

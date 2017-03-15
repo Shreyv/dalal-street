@@ -2,7 +2,6 @@
 $(document).ready(function () {
     var flag = true;
     getdashboard(flag);
-    getnews();
     flag = false;
     window.setInterval(function () {
         getdashboard(flag);
@@ -62,17 +61,20 @@ $(document).ready(function () {
                     cell5.setAttribute("id", x5);
                     cell6.setAttribute("id", x6);
                     cell7.setAttribute("id", x7);
-                    cell2.innerHTML = '<img src="images/caret-arrow-up.svg" style="height:10px;">';
                     cell1.innerHTML = company_list[i]["_id"];
-                    //cell2.innerHTML = "";
-                    cell3.setAttribute("class", "table_td_green");
-                    //cell3.setAttribute("style","background:#");
                     cell3.innerHTML = company_list[i]["current_price"];
                     cell4.innerHTML = company_list[i]["current_volume"];
                     cell5.innerHTML = company_list[i]["high"];
                     cell6.innerHTML = company_list[i]["low"];
                     cell7.innerHTML = '<button name="buy" type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button name="sell" type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
-
+                    if (company_list[i]["increased"] == true) {
+                        cell2.innerHTML = '<img src="images/caret-arrow-up.svg" style="height:10px;">';
+                        cell3.setAttribute("class", "table_td_green");
+                    }
+                    else {
+                        cell2.innerHTML = '<img src="images/sort-down.svg" style="height:10px;">';
+                        cell3.setAttribute("class", "table_td_red");
+                    }
                 }
                 else {
                     var y1 = document.getElementById(x1);
@@ -84,18 +86,14 @@ $(document).ready(function () {
                     var y7 = document.getElementById(x7);
                     var comp = company_list[i]["_id"];
                     y1.innerHTML = comp;
-                    var op = olddata[22 - i];
+                    //var op = olddata[22 - i];
                     var np = company_list[i]["current_price"];
-                    if (np > op) {
-                        y2.innerHTML = '<img src="images/caret-arrow-up.svg" style="width:10px;height:10px;">';
-                        y3.removeAttribute("class");
+                    if (company_list[i]["increased"] == true) {
+                        y2.innerHTML = '<img src="images/caret-arrow-up.svg" style="height:10px;">';
                         y3.setAttribute("class", "table_td_green");
                     }
-                    else if (np < op) {
-                        //var x =np-op;
-                        //alert(String(x));
-                        y2.innerHTML = '<img src="images/sort-down.svg" style="width:10px;height:10px;">';
-                        y3.removeAttribute("class");
+                    else {
+                        y2.innerHTML = '<img src="images/sort-down.svg" style="height:10px;">';
                         y3.setAttribute("class", "table_td_red");
                     }
 
@@ -109,28 +107,4 @@ $(document).ready(function () {
 
         })
     }
-
-    function getnews() {
-        $.getJSON("http://192.168.0.107:8000/news?user_id=9586229921", function (data) {
-            var market = data["message"]["news"];
-            var broker = data["message"]["broker_news"];
-            var mst = "", bst = "", t, m;
-            var sp = "...";
-            for (var x = 0; x < market.length; x++) {
-                t = market[x]["timestamp"];
-                t = t.slice(11, 16);
-                m = market[x]["message"];
-                mst += t + "-" + m + sp;
-            }
-            for (var x = 0; x < broker.length; x++) {
-                t = broker[x]["timestamp"];
-                t = t.slice(14, 19);
-                m = broker[x]["message"];
-                bst += t + "-" + m + sp;
-            }
-            $("#mn").text(mst);
-            $("#bn").text(bst);
-        })
-    }
-
 })

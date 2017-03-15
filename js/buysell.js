@@ -10,16 +10,17 @@ $(document).ready(function () {
             jQuery.browser.version = RegExp.$1;
         }
     })();
+    $.notify.defaults({
+        autoHide: true,
+        autoHideDelay: 2000,
+        elementPosition: 'bottom left',
+        globalPosition: 'top center',
+    })
     $("#myTable").on('click', '.buy_sell_button', function () {
         var currentRow = $(this).closest("tr");
         var company = currentRow.find("td:eq(0)").text();
         var type = $(this).attr("name");
         var st = "Enter " + type + " quantity for " + company;
-        // '<span style="font-size: 15px">'+st+'</span>'
-        // jPrompt('<span style="font-size: 15px">'+st+'</span>', 'Prompt Dialog', function(r) {
-        //     resp=parseInt(r);
-        // });
-        // alert(resp);
         jPrompt('<span style="font-size: 20px">' + st + '</span>', '', '', function (r) {
             var tr = parseInt(r);
             var patt = new RegExp("[^0-9]");
@@ -43,7 +44,7 @@ $(document).ready(function () {
             }
             else {
                 var mob = localStorage.getItem("mobile");
-                var d1 = {"user_id": mob, "company": company, "type": type.toLowerCase(), "quantity": tr}
+                var d1 = {"user_id": mob, "company": company, "type": type.toLowerCase(), "quantity": tr};
                 $.ajax({
                     url: 'http://192.168.0.107:8000/trade',
                     type: 'post',
@@ -51,7 +52,12 @@ $(document).ready(function () {
                     dataType: 'json',
                     success: function (d2) {
                         var x = d2["message"];
-                        //alert(x);
+                        if (x.includes("Not")) {
+                            $.notify(x, "error");
+                        }
+                        else {
+                            $.notify(x, "success");
+                        }
                     }
                 });
             }
