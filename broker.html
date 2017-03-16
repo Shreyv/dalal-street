@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Broker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/broker.css">
+    <script src="js/config.js"></script>
     <script src="js/broker.js"></script>
-    <script src="js/jquery-3.1.1.min.js"></script>
 </head>
 
 <body style="background: #ECEFF1;">
@@ -28,7 +28,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="dashbord.html" style="color: #fff;font-size: 18px">Dashboard</a></li>
+                <li><a href="dashboard.html" style="color: #fff;font-size: 18px">Dashboard</a></li>
                 <li><a href="portfolio.html" style="font-size: 18px;color: #fff">Portfolio & Transactions</a></li>
                 <li><a href="broker.html" class="nav_selected" style="font-size: 18px;color: #fff">Broker</a></li>
                 <li><a href="#" style="font-size: 18px;color: #fff">How to Play</a></li>
@@ -42,7 +42,8 @@
                                                                  style="margin-left: 2px;"><span
                         id="name"></span></span></a>
                 </li>
-                <li><a href="#" style="font-size: 18px;color: #FFF"><span class="glyphicon glyphicon-log-out"></span>
+                <li><a href="logout.html" style="font-size: 18px;color: #FFF"><span
+                        class="glyphicon glyphicon-log-out"></span>
                     Logout</a></li>
             </ul>
         </div>
@@ -75,37 +76,6 @@
         <p style="margin-top: 20px;"><span class="broker_note_title">Note:-</span><span>You can't assign more then one broker at a time.</span></p>
     </div>
 </div>
-
-<script>
-
-
-
-    function myFunction(index) {
-        var table = document.getElementById("broker_table");
-        var row = table.insertRow(1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-
-
-
-        cell1.innerHTML = "Zeus Learning";
-        cell2.innerHTML ='90%'
-        cell3.innerHTML = '0.1%';
-        cell4.innerHTML = '5000';
-        cell5.innerHTML = '<button type="button" class="buy_sell_button" style="margin: 0px;">Assign Broker</button>';
-
-    }
-
-    for (i = 1; i < 4; i++) {
-        // myFunction(i);
-    }
-
-
-</script>
-
 
 </body>
 </html>

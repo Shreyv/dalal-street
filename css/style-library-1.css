@@ -1,0 +1,47 @@
+/*	PATTERN LIBRARY STYLES
+/*----------------------------------------------------*/
+
+body {
+    margin: 0px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #333333;
+    background: #ffffff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cover-img {
+    height: 100vh;
+    width: auto;
+    background-image: url('../images/final2.jpg');
+    background-size: cover;
+    margin-bottom: 0;
+    background-position: bottom right;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .cover-img {
+        background-image: url('../images/final3.jpg');
+        height: 100vh;
+        background-size: cover;
+        width: 100%;
+        background-position: bottom center;
+    }
+
+}
+
+.login-div {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.33);
+    border-radius: 15px;
+}
+
+.big {
+    color: white;
+    text-shadow: 2px 2px #000000;
+}

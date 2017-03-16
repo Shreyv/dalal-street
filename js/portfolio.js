@@ -4,8 +4,8 @@ $(document).ready(function () {
     var amt = localStorage.getItem("amount");
     $("#name").text(name);
     $("#amount").text(amt);
-    //var req={"user_id":mob};
-    $.getJSON("http://192.168.0.107:8000/portfolio?user_id=9586229921", function (data) {
+    var curl = rurl + "portfolio?user_id=" + mob;
+    $.getJSON(curl, function (data) {
         var portfolio = data["message"]["portfolio"];
         var transaction = data["message"]["transaction"];
         var ttrans = document.getElementById("table_transaction");

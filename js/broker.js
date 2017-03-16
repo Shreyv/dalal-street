@@ -7,11 +7,19 @@ $(document).ready(function () {
     var amt = localStorage.getItem("amount");
     $("#name").text(name);
     $("#amount").text(amt);
-    var b;
-    var url = "http://192.168.0.107:8000/broker?user_id=";
-    var aurl = "http://192.168.0.107:8000/broker";
+    //$.ajaxSetup({
+    //    headers: {
+    //        'Authorization':localStorage.getItem("token")
+    //    }
+    //});
+    var curl1 = rurl + "broker?user_id=";
+    var curl2 = rurl + "broker";
     var tbroker = document.getElementById("broker_table");
-    $.getJSON(url + userid, function (data) {
+    /*get broker data */
+    $.getJSON(curl1 + userid, function (data) {
+        if (data["status"] != 200) {
+            window.location.replace("index.html");
+        }
         var broker = data["message"]["assigned"];
         if (broker == null) {
             $("#broker_assign_not_assign").text("Not Assigned");
@@ -37,15 +45,20 @@ $(document).ready(function () {
         }
 
     })
+    /* remove broker */
     $("#removeb").click(function () {
         var broker = $("#broker_assign_not_assign").text();
         var data = {"user_id": userid, "broker": broker, "type": "remove"};
         $.ajax({
-            url: aurl,
+            url: curl2,
             type: 'post',
             success: function (d) {
+                if (d["status"] != 200) {
+                    window.location.replace("index.html");
+                }
                 $("#broker_assign_not_assign").text("Not Assigned");
                 alert(d["message"]);
+
             },
             data: JSON.stringify(data)
         });
@@ -61,9 +74,12 @@ $(document).ready(function () {
         }
         var data = {"user_id": userid, "broker": broker, "type": "assign"};
         $.ajax({
-            url: aurl,
+            url: curl2,
             type: 'post',
             success: function (d) {
+                if (d["status"] != 200) {
+                    window.location.replace("index.html");
+                }
                 var newamount = d["message"]["balance"];
                 localStorage.setItem("amount", newamount);
                 $("#amount").text(newamount);

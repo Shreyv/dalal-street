@@ -1,7 +1,9 @@
 $(document).ready(function () {
     var mst = "", bst = "";
-    $.getJSON("http://192.168.0.107:8000/news?user_id=9586229921", function (data) {
-        var market = data["message"]["news"];
+    var curl = rurl + "news?user_id=" + localStorage.getItem("mobile");
+    $.getJSON(curl, function (data) {
+        if (data["status"] == 200) {
+            var market = data["message"]["news"];
         var broker = data["message"]["broker_news"];
         var t, m;
         var sp = '                ';
@@ -33,6 +35,10 @@ $(document).ready(function () {
             duplicated: true,
             pauseOnHover: true
         });
+        }
+        else {
+            window.location.replace("index.html");
+        }
     })
 
 })

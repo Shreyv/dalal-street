@@ -1,3 +1,13 @@
+@-moz-document url-prefix() {
+    #graph-container {
+        position: fixed;
+        width: 400px;
+        height: 350px;
+    }
+    #display-graph {
+        height: 270px;
+    }
+}
 .scroll-left {
 
     height: 30px;

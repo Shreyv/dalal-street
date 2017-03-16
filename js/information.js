@@ -7,6 +7,9 @@ $(document).ready(function () {
         var comp = $(this).text();
         var url = "http://192.168.0.107:8000/graph?company=" + comp;
         $.getJSON(url, function (data) {
+            if (data["status"] != 200) {
+                window.location.replace("index.html");
+            }
             var d = data["message"]["values"];
             for (var i = 0; i < d.length; i++) {
                 price[i] = parseFloat(d[i]["price"]);
@@ -37,7 +40,7 @@ $(document).ready(function () {
                     }
                 ]
             };
-            var ctx = document.getElementById("display-graph");
+            var ctx = document.getElementById("display-graph").getContext('2d');
             myLineChart = new Chart(ctx, {
                 type: 'line',
                 data: data,
@@ -55,6 +58,4 @@ $(document).ready(function () {
         });
     });
 })
-//function displaygraph(company,t,p) {
-//
-//}
+

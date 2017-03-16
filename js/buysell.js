@@ -1,6 +1,5 @@
 //todo remove setitem mobile & add notify.js
 $(document).ready(function () {
-    localStorage.setItem("mobile", "9586229921");
     jQuery.browser = {};
     (function () {
         jQuery.browser.msie = false;
@@ -25,22 +24,10 @@ $(document).ready(function () {
             var tr = parseInt(r);
             var patt = new RegExp("[^0-9]");
             var x = patt.test(r);
-            if (r == null) {
+            if (r == null || x == true || tr <= 0 || isNaN(tr) == true) {
                 //alert("Invalid entry...Must be a number");
                 jAlert('Invalid entry...Must be a number greater than 0', 'Error');
                 return;
-            }
-            else if (x == true) {
-                jAlert('Invalid entry...Must be a number greater than 0', 'Error');
-                return;
-            }
-            else if (index = r.indexOf('.') > -1) {
-                jAlert('Invalid entry...Must be a number greater than 0', 'Error');
-                return;
-            }
-
-            else if (tr <= 0 || isNaN(tr) == true) {
-                jAlert('Invalid entry...Must be a number greater than 0', 'Error');
             }
             else {
                 var mob = localStorage.getItem("mobile");
@@ -51,12 +38,17 @@ $(document).ready(function () {
                     data: JSON.stringify(d1),
                     dataType: 'json',
                     success: function (d2) {
-                        var x = d2["message"];
-                        if (x.includes("Not")) {
-                            $.notify(x, "error");
+                        if (d2["status"] == 200) {
+                            var x = d2["message"];
+                            if (x.includes("Not")) {
+                                $.notify(x, "error");
+                            }
+                            else {
+                                $.notify(x, "success");
+                            }
                         }
                         else {
-                            $.notify(x, "success");
+                            window.location.replace("index.html");
                         }
                     }
                 });
