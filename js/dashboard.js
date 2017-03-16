@@ -53,10 +53,12 @@ $(document).ready(function () {
                         cell7.innerHTML = '<button name="buy" type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button name="sell" type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
                         if (company_list[i]["increased"] == true) {
                             cell2.innerHTML = '<img src="images/caret-arrow-up.svg" style="height:10px;">';
+                            cell3.style.backgroundColor = "#E8F5E9";
                             cell3.setAttribute("class", "table_td_green");
                         }
                         else {
                             cell2.innerHTML = '<img src="images/sort-down.svg" style="height:10px;">';
+                            cell3.style.backgroundColor = "#FFEBEE";
                             cell3.setAttribute("class", "table_td_red");
                         }
                     }
@@ -73,10 +75,12 @@ $(document).ready(function () {
                         var np = company_list[i]["current_price"];
                         if (company_list[i]["increased"] == true) {
                             y2.innerHTML = '<img src="images/caret-arrow-up.svg" style="height:10px;">';
+                            y3.style.backgroundColor = "#E8F5E9";
                             y3.setAttribute("class", "table_td_green");
                         }
                         else {
                             y2.innerHTML = '<img src="images/sort-down.svg" style="height:10px;">';
+                            y3.style.backgroundColor = "#FFEBEE";
                             y3.setAttribute("class", "table_td_red");
                         }
 

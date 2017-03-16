@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    $("#logo").click(function () {
+        window.location.replace("dashboard.html");
+    })
     var mob = localStorage.getItem("mobile");
     var name = localStorage.getItem("name");
     var amt = localStorage.getItem("amount");

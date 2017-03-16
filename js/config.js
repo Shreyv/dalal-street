@@ -1,12 +1,18 @@
 var rurl = "http://192.168.0.107:8000/";
 $(document).ready(function () {
-    function logout() {
-
+    var token = localStorage.getItem("token");
+    if (token == null) {
+        alert("Please login first");
+        window.location.href = "index.html";
     }
-
-    $.ajaxSetup({
-        headers: {
-            'Authorization': localStorage.getItem("token")
-        }
-    });
+    else {
+        $.ajaxSetup({
+            headers: {
+                'Authorization': token
+            }
+        });
+    }
+    function logout() {
+        alert("Logout called");
+    }
 })

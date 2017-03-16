@@ -1,7 +1,18 @@
 $(document).ready(function () {
     $('#myTable').on('click', 'tr td:first-child ', function () {
         $("#display-graph").remove();
-        $('#graph-container').append('<canvas id="display-graph" height="450" style=" width: 100%;padding: 1px;"><canvas>');
+        $('#graph-container').append('<canvas id="display-graph" style="padding: 1px;"><canvas>');
+        if (/Mobi/.test(navigator.userAgent)) {
+            if (window.innerHeight > window.innerWidth) {
+                $('#display-graph').attr("height", 200);
+            }
+            else {
+                $('#display-graph').attr("height", 150);
+            }
+        }
+        else {
+            $('#display-graph').attr("height", 240);
+        }
         var myLineChart;
         var time = [], price = [];
         var comp = $(this).text();

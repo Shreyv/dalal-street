@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/broker.css">
     <script src="js/config.js"></script>
     <script src="js/broker.js"></script>
+    <script src="js/notify.min.js"></script>
 </head>
 
 <body style="background: #ECEFF1;">
@@ -24,7 +25,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="images/logo.png" style="width:45px;height:45px;margin-right: 5px;margin-top: 2px;">
+            <img id="logo" src="images/logo.png" style="width:45px;height:45px;margin-right: 5px;margin-top: 2px;">
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -37,10 +38,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <li style="font-size:20px;color: #FFF;margin-top: 13px;margin-left: 20px;"><i class="fa fa-inr"
                                                                                               style="font-size: 20px;"></i><span
-                        id="amount"></span></li>
+                        id="amount" style="margin-left: 10px"></span></li>
                 <li><a style="font-size: 18px;color: #FFF"><span class="glyphicon glyphicon-user"
                                                                  style="margin-left: 2px;"><span
-                        id="name"></span></span></a>
+                        id="name" style="margin-left: 10px"></span></span></a>
                 </li>
                 <li><a href="logout.html" style="font-size: 18px;color: #FFF"><span
                         class="glyphicon glyphicon-log-out"></span>
@@ -73,7 +74,8 @@
                 </tbody>
             </table>
         </div>
-        <p style="margin-top: 20px;"><span class="broker_note_title">Note:-</span><span>You can't assign more then one broker at a time.</span></p>
+        <p style="margin-top: 20px;"><span class="broker_note_title">Note:-</span><span>You cannot assign more than one broker at a time.</span>
+        </p>
     </div>
 </div>
 
