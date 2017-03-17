@@ -16,6 +16,9 @@ $(document).ready(function () {
     var curl1 = rurl + "broker?user_id=";
     var curl2 = rurl + "broker";
     var tbroker = document.getElementById("broker_table");
+    $('#logo').on('touchstart click', function () {
+        window.location.replace("dashboard.html");
+    });
     /*get broker data */
     $.getJSON(curl1 + userid, function (data) {
         if (data["status"] != 200) {
@@ -46,9 +49,6 @@ $(document).ready(function () {
         }
 
     })
-    $('#logo').on('touchstart click', function () {
-        window.location.replace("dashboard.html");
-    });
     /* remove broker */
     $("#removeb").click(function () {
         var r = confirm("Continue to remove broker?");

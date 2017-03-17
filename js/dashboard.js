@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $("#shares").hide();
+    $("#sector").hide();
     var flag = true;
     getdashboard(flag);
     flag = false;

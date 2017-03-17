@@ -25,7 +25,6 @@ $(document).ready(function () {
             var patt = new RegExp("[^0-9]");
             var x = patt.test(r);
             if (r == null || x == true || tr <= 0 || isNaN(tr) == true) {
-                //alert("Invalid entry...Must be a number");
                 jAlert('Invalid entry...Must be a number greater than 0', 'Error');
                 return;
             }
@@ -33,7 +32,7 @@ $(document).ready(function () {
                 var mob = localStorage.getItem("mobile");
                 var d1 = {"user_id": mob, "company": company, "type": type.toLowerCase(), "quantity": tr};
                 $.ajax({
-                    url: 'http://192.168.0.107:8000/trade',
+                    url: rurl + 'trade',
                     type: 'post',
                     data: JSON.stringify(d1),
                     dataType: 'json',

@@ -16,7 +16,7 @@ $(document).ready(function () {
         var myLineChart;
         var time = [], price = [];
         var comp = $(this).text();
-        var url = "http://192.168.0.107:8000/graph?company=" + comp;
+        var url = rurl + "graph?company=" + comp;
         $.getJSON(url, function (data) {
             if (data["status"] != 200) {
                 window.location.replace("index.html");

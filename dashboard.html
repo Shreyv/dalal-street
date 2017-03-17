@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/jquery.alerts.css">
     <script src="js/config.js"></script>
@@ -71,7 +71,6 @@
                     </tr>
                     </thead>
                     <tbody>
-
                     </tbody>
                 </table>
             </div>
@@ -85,8 +84,10 @@
             </pre>
             <p class="news_title" style="margin-top: 15px;font-size: 20px;">More Details</p>
             <div id="graph-container" class="company_graph text-center" style="margin: 0px;">
-                <canvas id="display-graph" style="padding: 1px;height: 80%">
+                <canvas id="display-graph" width="100%" style="padding: 1px;height: 80%">
                 </canvas>
+                <span id="sector" style="margin-left: 10px">Sector:IT</span><br>
+                <span id="shares">You have 100 shares</span>
             </div>
         </div>
     </div>
