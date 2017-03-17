@@ -66,6 +66,8 @@ $(document).ready(function () {
                     }
                 }
             });
+            $("#shares").show();
+            $("#sector").show();
         });
     });
 })

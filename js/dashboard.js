@@ -6,7 +6,7 @@ $(document).ready(function () {
     flag = false;
     window.setInterval(function () {
         getdashboard(flag);
-    }, 1000);
+    }, 10000);
     function getdashboard(flag) {
         var c, p;
         var t = document.getElementById('myTable');
@@ -49,10 +49,10 @@ $(document).ready(function () {
                         cell7.setAttribute("id", x7);
                         cell1.innerHTML = company_list[i]["_id"];
                         cell3.innerHTML = company_list[i]["current_price"];
-                        cell4.innerHTML = company_list[i]["current_volume"];
-                        cell5.innerHTML = company_list[i]["high"];
-                        cell6.innerHTML = company_list[i]["low"];
-                        cell7.innerHTML = '<button name="buy" type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button name="sell" type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
+                        cell5.innerHTML = company_list[i]["current_volume"];
+                        cell6.innerHTML = company_list[i]["high"];
+                        cell7.innerHTML = company_list[i]["low"];
+                        cell4.innerHTML = '<button name="buy" type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button name="sell" type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
                         if (company_list[i]["increased"] == true) {
                             cell2.innerHTML = '<img src="images/caret-arrow-up.svg" style="height:10px;">';
                             cell3.style.backgroundColor = "#E8F5E9";
@@ -87,10 +87,10 @@ $(document).ready(function () {
                         }
 
                         y3.innerHTML = np;
-                        y4.innerHTML = company_list[i]["current_volume"];
-                        y5.innerHTML = company_list[i]["high"];
-                        y6.innerHTML = company_list[i]["low"];
-                        y7.innerHTML = '<button name="buy" type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button name="sell" type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
+                        y5.innerHTML = company_list[i]["current_volume"];
+                        y6.innerHTML = company_list[i]["high"];
+                        y7.innerHTML = company_list[i]["low"];
+                        y4.innerHTML = '<button name="buy" type="button" class="buy_sell_button" style="margin: 0px;">Buy</button><button name="sell" type="button" class="buy_sell_button" style="margin-left: 5px;">Sell</button>';
                     }
                 }
             }
