@@ -1,4 +1,4 @@
-var rurl = "http://192.168.0.109:8000/";
+var rurl = "localhost:8000/";
 $(document).ready(function () {
     var token = localStorage.getItem("token");
     //$(document).bind("contextmenu",function(e) {
