@@ -10,7 +10,7 @@ $(document).ready(function () {
         else {
             var d1 = {"user_id": userid, "password": password};
             $.ajax({
-                url: "localhost:8000/login",
+                url: "http://localhost:8000/login",
                 type: 'post',
                 data: JSON.stringify(d1),
                 dataType: 'json',
