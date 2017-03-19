@@ -41,8 +41,8 @@ $(document).ready(function () {
             var cell4 = row.insertCell(3);
             var cell5 = row.insertCell(4);
             cell1.innerHTML = d[i]["_id"];
-            cell2.innerHTML = d[i]["prediction_accuracy"];
-            cell3.innerHTML = d[i]["brokerage"];
+            cell2.innerHTML = d[i]["prediction_accuracy"] + "%";
+            cell3.innerHTML = d[i]["brokerage"] + "%";
             cell4.innerHTML = d[i]["charge"];
             cell5.innerHTML = '<button type="button" class="buy_sell_button" style="margin: 0px;">Assign Broker</button>';
 

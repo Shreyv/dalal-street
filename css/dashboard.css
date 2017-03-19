@@ -97,3 +97,7 @@ td.table_td_green {
     color: #29353d;
 }
 
+#myTable tr td:first-child:hover {
+    cursor: pointer;
+}
+

@@ -8,9 +8,9 @@ $(document).ready(function () {
             alert("Invalid Entry");
         }
         else {
-            var d1 = {"user_id": userid, "password": password}
+            var d1 = {"user_id": userid, "password": password};
             $.ajax({
-                url: "http://192.168.0.107:8000/login",
+                url: "http://192.168.0.109:8000/login",
                 type: 'post',
                 data: JSON.stringify(d1),
                 dataType: 'json',

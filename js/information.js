@@ -21,7 +21,9 @@ $(document).ready(function () {
             if (data["status"] != 200) {
                 window.location.replace("index.html");
             }
-            var d = data["message"]["values"];
+            var d = data["message"]["graph"]["values"];
+            var shares = data["message"]["shares"];
+            var type = data["message"]["graph"]["type"];
             for (var i = 0; i < d.length; i++) {
                 price[i] = parseFloat(d[i]["price"]);
                 time[i] = d[i]["timestamp"];
@@ -67,7 +69,9 @@ $(document).ready(function () {
                 }
             });
             $("#shares").show();
+            $("#shares").text("You have " + shares + " shares");
             $("#sector").show();
+            $("#sector").text("Sector:" + type);
         });
     });
 })
