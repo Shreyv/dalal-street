@@ -38,12 +38,14 @@ $(document).ready(function () {
                     dataType: 'json',
                     success: function (d2) {
                         if (d2["status"] == 200) {
-                            var x = d2["message"];
+                            var x = d2["message"]["message"];
                             if (x.includes("Not")) {
                                 $.notify(x, "error");
                             }
                             else {
                                 $.notify(x, "success");
+                                var bal=d2["message"]["balance"];
+                                $("#amount").text(bal);
                             }
                         }
                         else {

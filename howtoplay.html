@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How To Play</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-32x32.png">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/config.js"></script>
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body style="background: #FFFFFF;">
+
+
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+</style>
+
+<!-- Bootstrap FAQ - END -->
+
+<nav class="navbar navbar-inverse" style="background: #3e515b; border:none;margin-bottom: 5px;">
+    <div class="container-fluid">
+        <div class="navbar-header" >
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img id="logo" src="images/logo.png" style="width:45px;height:45px;margin-right: 5px;margin-top: 2px;">
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="dashboard.html" style="color: #fff;font-size: 18px">Dashboard</a></li>
+                <li><a href="portfolio.html" style="font-size: 18px;color: #fff">Portfolio & Transactions</a></li>
+                <li><a href="broker.html" style="font-size: 18px;color: #fff">Broker</a></li>
+                <li><a href="#" style="font-size: 18px;color: #fff" class="nav_selected">How To Play</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li style="font-size:20px;color: #FFF;margin-top: 13px;margin-left: 20px;"><i class="fa fa-inr"
+                                                                                              style="font-size: 20px;"></i><span
+                        id="amount" style="margin-left: 10px"></span></li>
+                <li><a style="font-size: 18px;color: #FFF"><span class="glyphicon glyphicon-user"
+                                                                 style="margin-left: 2px;"><span
+                        id="name" style="margin-left: 10px"></span></span></a>
+                </li>
+                <li><a id="logout" style="font-size: 18px;color: #FFF"><span
+                        class="glyphicon glyphicon-log-out"></span>
+                    Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>Dalal Street <small>General Instructions on How To Play</small></h1>
+    </div>
+
+    <!-- Bootstrap FAQ - START -->
+    <div class="container">
+
+        <div class="panel-group">
+
+            <!--Know The Rules-->
+            <div class="faqHeader" style="font-weight: bold">Know The Rules</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Dalal Street market will be closed at 4:00PM on 23rd March, 2017. Further trading won't be allowed.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Each investor will get 15 Lacs of virtual money at the time of beginning. You will have to make max possible profit by trading shares.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Share prices will change based on our software.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">In the end leaderboard will be displayed on website and winner will be decided based on the remaining balance in account.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Only remaining balance will be evaluated at the time of leaderboard declaration. Hence it is advisory to sell all shares before closing of market.</div>
+                    </h4>
+                </div>
+            </div>
+
+
+            <!--About Dashboard-->
+            <div class="faqHeader" style="font-weight: bold">About Dashboard</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Dashboard contains total companies with its available shares(volume).</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">You will only be able to buy shares of a company if volume is available and you have enough balance for same.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Dashboard content will reflect changes automatically at every 10secs. To see changes in market news you will have to refresh the page.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">On the top right corner, you will get the market news and tips from assigned broker.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Clicking on company name will give you the graph having details like company sector, no. of shares you have, and price fluctuation of last hour.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Column 'high' and 'low' indicates all time high (MAXIMUM) and all time low (MINIMUM) prices respectively. </div>
+                    </h4>
+                </div>
+            </div>
+
+
+            <!--About Portfolio & Transactions-->
+            <div class="faqHeader" style="font-weight: bold">About Portfolio & Transactions</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">In portfolio part, you will be shown each total number of shares owned by you at that time.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">Transaction part will have information regarding your last 12 transactions.</div>
+                    </h4>
+                </div>
+            </div>
+
+            <!--About Broker-->
+            <div class="faqHeader" style="font-weight: bold">About Broker</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">You can assign broker to get tips regarding market.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold; color: red;">NOTE: Broker's tips are not fully trustworthy source. So follow them at your own risk!!</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">You can only assign one broker at a time and you will have to face assigning charge everytime you assign or change a broker.</div>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div style="font-weight: bold">You will be charged respective brokerage on every transaction you do if you have a broker assigned.</div>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
