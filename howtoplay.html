@@ -13,6 +13,14 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="js/config.js"></script>
     <link rel="stylesheet" href="css/portfolio.css">
+    <script>
+        $(document).ready(function(){
+            var username=localStorage.getItem("name");
+            var amount=localStorage.getItem("amount");
+            $("#name").text(username);
+            $("#amount").text(amount);
+        })
+    </script>
 </head>
 <body style="background: #FFFFFF;">
 
