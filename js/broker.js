@@ -22,7 +22,16 @@ $(document).ready(function () {
     /*get broker data */
     $.getJSON(curl1 + userid, function (data) {
         if (data["status"] != 200) {
-            window.location.replace("index.html");
+            if(data["status"]== 555){
+                window.location.replace("countdown.html");
+            }
+            else if(data["status"]== 666){
+                alert("Market has been closed..You will be redirected to leaderboard")
+                window.location.replace("leaderboard.html");
+            }
+            else{
+                window.location.replace("index.html");
+            }
         }
         var broker = data["message"]["assigned"];
         if (broker == null) {
