@@ -13,6 +13,7 @@ $(document).ready(function () {
         var userid = localStorage.getItem("mobile");
         var curl = rurl + "dashboard?user_id=" + userid;
         $.getJSON(curl, function (data) {
+            alert(data["status"])
             if (data["status"] == 200) {
                 var username = data["message"]["investor"]["name"];
                 var amount = data["message"]["investor"]["balance"];
@@ -95,7 +96,16 @@ $(document).ready(function () {
                 }
             }
             else {
-                window.location.replace("index.html");
+                if(data["status"]== 555){
+                    window.location.replace("countdown.html");
+                }
+                else if(data["status"]== 666){
+                    alert("Market has been closed..You will be redirected to leaderboard")
+                    window.location.replace("leaderboard.html");
+                }
+                else{
+                    window.location.replace("index.html");
+                }
             }
 
 

@@ -37,7 +37,16 @@ $(document).ready(function () {
         });
         }
         else {
-            window.location.replace("index.html");
+            if(data["status"]== 555){
+                window.location.replace("countdown.html");
+            }
+            else if(data["status"]== 666){
+                alert("Market has been closed..You will be redirected to leaderboard")
+                window.location.replace("leaderboard.html");
+            }
+            else{
+                window.location.replace("index.html");
+            }
         }
     })
 

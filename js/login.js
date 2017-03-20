@@ -10,7 +10,7 @@ $(document).ready(function () {
         else {
             var d1 = {"user_id": userid, "password": password};
             $.ajax({
-                url: "http://35.154.159.2:8000/login",
+                url: "http://192.168.0.110:8000/login",
                 type: 'post',
                 data: JSON.stringify(d1),
                 dataType: 'json',
