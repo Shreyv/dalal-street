@@ -3,8 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Leaderboard</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-
+<p align="center" style="font-size: 40px;font-family: 'Bookman Old Style';margin-top: 10px;margin-left: 100px">Leader-Board for Dalal Street</p>
+<div class="container-fluid" style="padding-bottom: 0px;margin-bottom: 0px;">
+    <div class="row" style="margin-left: 35%">
+        <div class="col-sm-6" style="padding: 10px;">
+            <div class="table-responsive" style="box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.2);border-radius: 5px;">
+                <table id="myTable" class=" col-sm-8 table text-center " style="padding: 0px;background: #FFF;margin: 0px;" data-min="5" data-max="50">
+                    <thead class="text-center">
+                    <tr style="background: #546E7A;color: #FFF;">
+                        <th style="text-align: center;">Rank</th>
+                        <th style="text-align: center;">Name</th>
+                        <th style="text-align: center;">Balance</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+<script>
+//    var curl="";
+//    $.getJSON(curl, function (data) {
+//
+//    }
+    var t = document.getElementById('myTable');
+    var row,cell1,cell2,cell3
+    for(var i=0;i<100;i++){
+        row = t.insertRow(1);
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+        cell3 = row.insertCell(2);
+        cell1.innerHTML=i;
+        cell2.innerHTML="Shrey";
+        cell3.innerHTML="10000";
+    }
+</script>
 </body>
 </html>

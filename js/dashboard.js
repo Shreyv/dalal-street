@@ -13,7 +13,6 @@ $(document).ready(function () {
         var userid = localStorage.getItem("mobile");
         var curl = rurl + "dashboard?user_id=" + userid;
         $.getJSON(curl, function (data) {
-            alert(data["status"])
             if (data["status"] == 200) {
                 var username = data["message"]["investor"]["name"];
                 var amount = data["message"]["investor"]["balance"];

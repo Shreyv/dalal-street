@@ -1,14 +1,6 @@
 var rurl = "http://192.168.0.110:8000/";
 $(document).ready(function () {
     var token = localStorage.getItem("token");
-    //$(document).bind("contextmenu",function(e) {
-    //    e.preventDefault();
-    //});
-    //$(document).keydown(function(e){
-    //    if(e.which === 123){
-    //        return false;
-    //    }
-    //});
     $("#logout").css("cursor", "pointer");
     if (token == null) {
         alert("Please login first");
