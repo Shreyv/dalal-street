@@ -1,4 +1,4 @@
-var rurl = "http://192.168.0.110:8000/";
+var rurl = "http://35.154.159.2:8000/";
 $(document).ready(function () {
     var token = localStorage.getItem("token");
     $("#logout").css("cursor", "pointer");
