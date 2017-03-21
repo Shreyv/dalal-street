@@ -39,7 +39,7 @@ $(document).ready(function () {
                     success: function (d2) {
                         if (d2["status"] == 200) {
                             var x = d2["message"]["message"];
-                            if (x.includes("Not")) {
+                            if (x.includes("Not") || x.includes("not")) {
                                 $.notify(x, "error");
                             }
                             else {
