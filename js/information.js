@@ -25,8 +25,14 @@ $(document).ready(function () {
             var shares = data["message"]["shares"];
             var type = data["message"]["graph"]["type"];
             for (var i = 0; i < d.length; i++) {
-                price[i] = parseFloat(d[i]["price"]);
-                time[i] = d[i]["timestamp"];
+                if(i%4==0) {
+                    price[i] = parseFloat(d[i]["price"]);
+                    time[i] = d[i]["timestamp"];
+                }
+                else{
+                    price[i] = parseFloat(d[i]["price"]);
+                    time[i] = "";
+                }
             }
             var data = {
                 labels: time,

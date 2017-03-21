@@ -8,13 +8,13 @@
     <style>
         body {
             text-align: center;
-            background: #00ECB9;
+            background: #F5F5F5;
             font-family: sans-serif;
             font-weight: 100;
         }
 
         h1 {
-            color: #396;
+            color: #263238;
             font-weight: 100;
             font-size: 40px;
             margin: 40px 0px 20px;
@@ -32,25 +32,26 @@
         #clockdiv > div {
             padding: 10px;
             border-radius: 3px;
-            background: #00BF96;
+            background: #F5F5F5;
             display: inline-block;
         }
 
         #clockdiv div > span {
             padding: 15px;
             border-radius: 3px;
-            background: #00816A;
+            background: #263238;
             display: inline-block;
         }
 
         .smalltext {
             padding-top: 5px;
             font-size: 16px;
+            color: #263238;
         }
     </style>
     <script>
         $(document).ready(function () {
-            var countDownDate = new Date("Mar 20, 2017 17:31:00").getTime();
+            var countDownDate = new Date("Mar 22, 2017 10:00:00").getTime();
             var x = setInterval(function () {
                 var now = new Date().getTime();
                 var distance = countDownDate - now;
